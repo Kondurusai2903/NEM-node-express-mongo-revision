@@ -1,5 +1,25 @@
-GET http://localhost:3000/currencies
+GET http://localhost:3000/currencies?min_value="0.01"
 
 
 ###
 GET http://localhost:3000/
+
+
+
+###
+GET http://localhost:3000/currencies/inr
+
+
+
+###
+GET http://localhost:3000/users
+
+
+
+###
+GET http://localhost:3000/users/f5435c11-4416-4699-89ae-6ac198cfd62d
+
+
+
+###
+GET http://localhost:3000/users/search?gender=male&age=49
