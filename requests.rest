@@ -1,27 +1,28 @@
-GET http://localhost:3000/currencies?min_value="0.01"
+###
+GET http://localhost:8000/currencies?min_value="0.01"
 
 
 ###
-GET http://localhost:3000/
-
-
-
-###
-GET http://localhost:3000/currencies/inr
+GET http://localhost:8000/
 
 
 
 ###
-GET http://localhost:3000/users
+GET http://localhost:8000/currencies/inr
+
+
+
+###
+GET http://localhost:8000/users
 Authorization: LetMeIn
 
 
 
 ###
-GET http://localhost:3000/users/f5435c11-4416-4699-89ae-6ac198cf
+GET http://localhost:8000/users/6607d086-7159-4c26-beb1-280c9f9cbf35
 Authorization: LetMeIn
 
 
 ###
-GET http://localhost:3000/users/search?gender=male&age=49
+GET http://localhost:8000/users/search?gender=male&age=49
 Authorization: LetMeIn

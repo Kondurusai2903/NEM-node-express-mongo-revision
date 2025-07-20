@@ -1,11 +1,28 @@
 const express = require('express')
+const morgan = require('morgan')
 const app = express()
-require('dotenv').config()
-const PORT = process.env.PORT
-
-// const { getCurrencies, getCurrenciesBySymbol } = require('./controllers/currencies.controller')
 const currencyRouter = require('./routers/currencies.routes')
 const userRouter = require('./routers/user.routes')
+
+//  Middlewares
+if (process.env.NODE_ENV === "development") {
+  app.use(morgan('dev'))
+}
+
+app.use(express.json())
+
+
+
+app.use((req, res, next) => {
+  console.log('Custom Middleware for the application 🙈')
+  next()
+})
+
+app.use((req, res, next) => {
+  req.requestTime = new Date().toISOString
+  next()
+})
+
 
 app.get('/', (req, res) => {
   res
@@ -16,14 +33,17 @@ app.get('/', (req, res) => {
 })
 
 app.use('/currencies', currencyRouter)
-
 app.use('/users', userRouter)
 
-app.listen(PORT, () => {
-  console.log(`Server started at PORT :: ${PORT}`)
-})
+module.exports = app
 
 
+
+
+
+// app.listen(PORT, () => {
+//   console.log(`Server started at PORT :: ${PORT}`)
+// })
 
 
 
