@@ -1,6 +1,8 @@
 const express = require('express')
 const app = express()
-PORT = 3000
+require('dotenv').config()
+const PORT = process.env.PORT
+
 // const { getCurrencies, getCurrenciesBySymbol } = require('./controllers/currencies.controller')
 const currencyRouter = require('./routers/currencies.routes')
 const userRouter = require('./routers/user.routes')
@@ -20,6 +22,11 @@ app.use('/users', userRouter)
 app.listen(PORT, () => {
   console.log(`Server started at PORT :: ${PORT}`)
 })
+
+
+
+
+
 
 // app.get('/currencies', getCurrencies)
 // app.get('/currencies/:currency', getCurrenciesBySymbol)

@@ -13,13 +13,15 @@ GET http://localhost:3000/currencies/inr
 
 ###
 GET http://localhost:3000/users
+Authorization: LetMeIn
 
 
 
 ###
-GET http://localhost:3000/users/f5435c11-4416-4699-89ae-6ac198cfd62d
-
+GET http://localhost:3000/users/f5435c11-4416-4699-89ae-6ac198cf
+Authorization: LetMeIn
 
 
 ###
 GET http://localhost:3000/users/search?gender=male&age=49
+Authorization: LetMeIn
